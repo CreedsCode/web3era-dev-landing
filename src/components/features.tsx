@@ -6,11 +6,11 @@ export function Features() {
       <div className="flex flex-col gap-3">
         <span className="font-bold uppercase text-primary text-center">Features</span>
         <h2 className="font-heading text-3xl font-semibold sm:text-4xl text-center">
-          The goal is to have fewer worries with web3 implementations.
+          Let&apos;s worry less about web3.
         </h2>
       </div>
       <p className="text-lg text-muted-foreground text-center max-w-2xl">
-        Reducing Worries with Web3 Implementations
+        Reducing Worries by Mastering the following:
       </p>
       <div className="mt-6 grid auto-rows-fr grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-lg">
