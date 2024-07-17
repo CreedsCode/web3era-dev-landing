@@ -14,8 +14,12 @@ fi
 # Get current date
 current_date=$(date +%Y-%m-%d)
 
-# Create a new branch with the current date
+# Get the default branch name
+default_branch=$(git remote show origin | awk '/HEAD branch/ {print $NF}')
+
+# Create a new branch from the default branch with the current date
 branch_name="import-$current_date"
+git checkout "$default_branch"
 git checkout -b "$branch_name"
 
 # Find the zip file starting with "app" and ending with ".zip"
@@ -26,12 +30,21 @@ if [ -z "$zip_file" ]; then
   exit 1
 fi
 
-# Extract the contents of the zip file, excluding the .git directory
-unzip -o "$zip_file" -x ".git/*"
+# Create a temporary directory to extract the zip file
+temp_dir=$(mktemp -d)
+
+# Extract the contents of the zip file to the temporary directory, excluding the .git directory
+unzip -q "$zip_file" -d "$temp_dir" -x ".git/*"
 
 # Rename the zip file with the "imported_" prefix
 imported_zip_file="imported_$(basename "$zip_file")"
 mv "$zip_file" "$imported_zip_file"
 
-echo "Imported website from $zip_file into branch $branch_name. Please manually merge the changes."
-echo "To undo the changes made by this script, run: git checkout - && git branch -D $branch_name"
+# Rebase the new files into the new branch
+git rebase --onto "$branch_name" "$default_branch" -- "$temp_dir"
+
+# Remove the temporary directory
+rm -rf "$temp_dir"
+
+echo "Created a new branch '$branch_name' from '$default_branch' and rebased new files from $zip_file."
+echo "Please review the changes, commit, and push the new branch."
