@@ -40,11 +40,12 @@ unzip -q "$zip_file" -d "$temp_dir" -x ".git/*"
 imported_zip_file="imported_$(basename "$zip_file")"
 mv "$zip_file" "$imported_zip_file"
 
-# Rebase the new files into the new branch
-git rebase --onto "$branch_name" "$default_branch" -- "$temp_dir"
+# Apply the changes from the temporary directory to the new branch
+git apply --directory="$temp_dir"
 
 # Remove the temporary directory
 rm -rf "$temp_dir"
 
-echo "Created a new branch '$branch_name' from '$default_branch' and rebased new files from $zip_file."
+echo "Created a new branch '$branch_name' from '$default_branch' and applied changes from $zip_file."
 echo "Please review the changes, commit, and push the new branch."
+echo "To revert the changes made by this script, run: git checkout $default_branch && git branch -D $branch_name"
