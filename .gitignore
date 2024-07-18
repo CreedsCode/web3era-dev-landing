@@ -38,3 +38,5 @@ next-env.d.ts
 
 imported_*.zip
 app*.zip
+
+extracted_files/*
