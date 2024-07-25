@@ -7,7 +7,7 @@ export function Technologies() {
         Built for developers, Developed for consumers
       </h2>
       <p className="max-w-2xl text-center text-lg text-muted-foreground">
-        The goal is to avoid unnecessary mental hurdles. Why learn Web3 if it could be as easy as a
+        Web3Era avoids unnecessary mental hurdles. Why learn Web3 if it could be as easy as a
         MongoDB implementation?
       </p>
       <div className="relative sm:mt-8">
