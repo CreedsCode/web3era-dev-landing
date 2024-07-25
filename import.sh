@@ -40,9 +40,14 @@ unzip -q "$zip_file" -d "$extracted_dir" -x ".git/*"
 imported_zip_file="imported_$(basename "$zip_file")"
 mv "$zip_file" "$imported_zip_file"
 
+# Apply new code on to the current code base
+cp -r $extracted_dir/ .
+
+# Remove the extracted_files
+mv -r $extracted_dir
+
 echo "Created a new branch '$branch_name' from '$default_branch'."
 echo "Extracted the contents of $zip_file to the directory '$extracted_dir'."
 echo "Please manually apply the changes from the extracted files to the new branch."
-echo "To apply the changes, run: git apply --directory=\"$extracted_dir\""
 echo "After applying the changes, you can commit and push the new branch."
 echo "To revert the changes made by this script, run: git checkout $default_branch && git branch -D $branch_name"

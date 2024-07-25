@@ -12,10 +12,10 @@ export function Hero() {
         <ArrowRight size={16} />
       </div>
       <h1 className="text-center font-heading text-4xl font-semibold sm:text-5xl sm:leading-tight max-w-5xl">
-        Web3Era Demo
+        Build trustless apps just like using firebase
       </h1>
       <p className="max-w-lg text-center text-lg text-muted-foreground sm:text-xl">
-        Check out our lates demo showing how an app interfaces with blockchain.
+        Check out our lates demo showing the first app build on web3era.
       </p>
       <div className="grid grid-cols-2 gap-3">
         <Button
