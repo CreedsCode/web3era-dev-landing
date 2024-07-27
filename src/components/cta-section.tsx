@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+// import LoomForm from "./loom-form";
 
 export function CtaSection() {
   return (
@@ -8,8 +9,12 @@ export function CtaSection() {
       <h2 className="font-heading text-3xl font-semibold sm:text-4xl max-w-xl sm:leading-tight text-center">
         Help with research and development or stay updated!
       </h2>
+      {/* <p className="text-lg text-muted-foreground text-center max-w-xl mb-0">
+        Feel free to join the waitlist and wait for the v1 of the Web3Era SDK!
+      </p>
+      <LoomForm /> */}
       <p className="text-lg text-muted-foreground text-center max-w-xl">
-        Web3 Era has been the result of the research and development of the open-source community,
+        Web3Era has been the result of the research and development of the open-source community,
         stay updated on the core maintainers&apos; Twitter account.
       </p>
       <Button

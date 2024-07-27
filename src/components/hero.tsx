@@ -8,14 +8,15 @@ export function Hero() {
   return (
     <section className="container flex flex-col items-center gap-8 pt-20 sm:gap-10">
       <div className="flex cursor-pointer items-center gap-1 rounded-full border bg-secondary hover:bg-secondary/60 py-1 px-4">
-        <span className="text-sm text-secondary-foreground">Lates Research</span>
+        <span className="text-sm text-secondary-foreground">New Demo</span>
         <ArrowRight size={16} />
       </div>
       <h1 className="text-center font-heading text-4xl font-semibold sm:text-5xl sm:leading-tight max-w-5xl">
-        Web3Era Demo
+        Start building apps that everyone can trust.
       </h1>
       <p className="max-w-lg text-center text-lg text-muted-foreground sm:text-xl">
-        Check out our lates demo showing how an app interfaces with blockchain.
+        Check out our latest demo showing the first app built on web3era, featuring gasless
+        transactions.
       </p>
       <div className="grid grid-cols-2 gap-3">
         <Button

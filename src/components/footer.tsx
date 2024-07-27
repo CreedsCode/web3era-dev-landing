@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="container mt-10 flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
       <p className="text-center text-sm" />
       <div className="flex items-center gap-5">
-        <a
+      <a
           href="https://github.com/CreedsCode/web3era-toy"
           className="text-muted-foreground hover:text-foreground"
         >
