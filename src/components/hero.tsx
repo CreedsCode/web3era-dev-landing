@@ -12,7 +12,7 @@ export function Hero() {
         <ArrowRight size={16} />
       </div>
       <h1 className="text-center font-heading text-4xl font-semibold sm:text-5xl sm:leading-tight max-w-5xl">
-        Build trustless systems like firebase
+        Start building apps that everyone can trust.
       </h1>
       <p className="max-w-lg text-center text-lg text-muted-foreground sm:text-xl">
         Check out our latest demo showing the first app built on web3era, featuring gasless
